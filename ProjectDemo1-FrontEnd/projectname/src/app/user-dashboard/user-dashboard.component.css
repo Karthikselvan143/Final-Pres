@@ -1,0 +1,268 @@
+/* Header Styling */
+header {
+  background-color: #333; /* Dark background for a professional look */
+  padding: 0.5rem 1rem; /* Compact padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header img {
+  height: 30px; /* Adjusted for compact size */
+}
+
+header a {
+  color: #fff; /* White icon color for professional contrast */
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
+
+header a:hover {
+  color: #ff6347; /* Softer hover effect */
+}
+
+/* Dashboard Navigation Bar Styling */
+.navbar {
+  background-color: #f8f9fa; /* Light background for contrast */
+  border-bottom: 1px solid #dee2e6; /* Light border for separation */
+  padding: 0.5rem 1rem;
+  margin-top: 56px; /* Adjust for fixed header */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-item .nav-link {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  color: #333; /* Dark text color for better readability */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item .nav-link:hover,
+.nav-item .nav-link.active {
+  background-color: #e9ecef; /* Light background on hover and active state */
+  color: #007bff; /* Highlight color */
+}
+
+/* Sidebar Styling (Not Used in This Layout) */
+#sidebar {
+  display: none; /* Hidden since it's not needed in this layout */
+}
+
+/* Main Content Styling */
+#main-content {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  margin-top: 56px; /* Adjusted for fixed header */
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-item .nav-link {
+    padding: 0.75rem;
+    text-align: center;
+  }
+}
+
+/* Remove extra margin/padding in container-fluid and main content */
+.container-fluid {
+  padding: 0;
+}
+
+#main-content {
+  padding-top: 1rem; /* Adjusted padding for consistency */
+}
+@media (min-width: 576px) {
+  .ms-sm-auto {
+      margin-left: 10px!important;
+      margin-right: 10px !important;
+      width: 100% !important;
+
+     
+      
+  }
+}
+
+/* Header Styling */
+header {
+  background-color: #2c3e50; /* Dark blue-gray background */
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header img {
+  height: 40px; /* Maintain logo size */
+}
+
+header a {
+  color: #ecf0f1; /* Light icon color */
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+header a:hover {
+  color: #f39c12; /* Orange hover effect */
+}
+
+/* Navigation Bar Styling */
+.navbar {
+  background-color: #34495e; /* Darker blue-gray for contrast */
+  padding: 0.5rem 1rem;
+  margin-top: 56px; /* Space for fixed header */
+}
+
+.navbar-brand {
+  color: #ecf0f1; /* Light color for "Hi username" */
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar-brand:hover {
+  color: #f39c12; /* Orange hover effect */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.nav-item .nav-link {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ecf0f1;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item .nav-link:hover,
+.nav-item .nav-link.active {
+  background-color: #f39c12; /* Orange background on hover and active */
+  color: #2c3e50; /* Dark text on hover and active */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Main Content */
+#main-content {
+  padding: 2rem;
+  background-color: #ecf0f1; /* Light gray for content area */
+  margin-top: 56px; /* Space for fixed header */
+}
+
+/* Remove extra margin/padding in container-fluid and main content */
+.container-fluid {
+  padding: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item .nav-link {
+    padding: 1rem;
+    text-align: center;
+  }
+}
+/* Header Styling */
+header {
+  background-color: #333;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+}
+
+header img {
+  height: 40px;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 30px; /* Space between navigation links */
+}
+
+.nav-item .nav-link {
+  font-size: 1.2rem;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-item .nav-link:hover,
+.nav-item .nav-link.active {
+  color: #007bff; /* Highlight color */
+}
+
+.navbar-text {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+button.btn-danger {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button.btn-danger:hover {
+  background-color: #ff4500;
+}
+
+/* Adjust spacing and layout */
+.container-fluid {
+  padding: 0;
+}
+
+header nav {
+  flex-grow: 1;
+  justify-content: center; /* Center navigation links */
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header nav {
+    order: 2; /* Reposition nav for mobile view */
+  }
+
+  .navbar-text {
+    order: 1; /* Reposition username for mobile view */
+  }
+
+  button.btn-danger {
+    order: 3; /* Reposition logout for mobile view */
+  }
+}

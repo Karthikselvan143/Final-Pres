@@ -1,0 +1,135 @@
+/* General reset and base styles */
+body {
+  background: url(https://images.unsplash.com/photo-1552858725-a19e7fcd3ac4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGhvdGVsJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D) no-repeat;
+  background-size: cover;
+}
+
+.boclass {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Gallery Container */
+.gallery-container {
+  text-align: center; /* Center text inside the container */
+  padding: 20px; /* Add padding around the container */
+}
+
+/* Gallery Title */
+.gallery-container h1 {
+  margin-top: 60px;
+  font-size: 2.5em; /* Adjust font size as needed */
+  color: #fff; /* Text color */
+  margin-bottom: 20px; /* Space below the title */
+  position: relative; /* Relative positioning for pseudo-elements */
+  display: inline-block; /* Inline-block for positioning pseudo-elements */
+}
+
+/* Title Underline Effect */
+.gallery-container h1::after {
+  content: '';
+  display: block;
+  width: 50px; /* Width of the underline */
+  height: 3px; /* Height of the underline */
+  background-color: #ff4a4a; /* Underline color */
+  margin: 10px auto 0; /* Centered with spacing above */
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between grid items */
+  padding: 0 50px; /* Horizontal padding */
+}
+
+/* Ensure 3 items per row on medium to large screens */
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  }
+}
+
+/* Ensure 2 items per row on smaller screens */
+@media (max-width: 767px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+  }
+}
+
+/* Ensure 1 item per row on very small screens */
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 item per row */
+  }
+}
+
+/* Gallery Item */
+.gallery-item {
+  position: relative; /* Positioning for overlay and hover effects */
+  overflow: hidden; /* Hide overflowed content */
+  width: 100%; /* Ensure it fills the grid column */
+  height: 250px; /* Set a fixed height */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+/* Hover Effect for Gallery Item */
+.gallery-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Gallery Item Image */
+.gallery-item img {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height to fit container */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  display: block; /* Remove extra space below image */
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.4s ease, filter 0.4s ease; /* Smooth transitions */
+  filter: brightness(80%); /* Darken image */
+}
+
+/* Hover Effect for Image */
+.gallery-item img:hover {
+  transform: scale(1.1) rotate(2deg); /* Zoom and rotate effect */
+  filter: brightness(100%); /* Restore brightness */
+}
+
+/* Overlay Effect */
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 0, 0, 0.3), rgba(0, 255, 255, 0.3)); /* Gradient overlay */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.4s ease; /* Smooth transition */
+}
+
+/* Overlay on Hover */
+.gallery-item:hover::before {
+  opacity: 0.7; /* Show overlay on hover */
+}
+
+/* Overlay Text Effect */
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center text */
+  color: white; /* Text color */
+  font-size: 1.5em; /* Text size */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.4s ease; /* Smooth transition */
+  letter-spacing: 1px; /* Space between letters */
+}
+
+/* Text on Hover */
+.gallery-item:hover::after {
+  opacity: 1; /* Show text on hover */
+}

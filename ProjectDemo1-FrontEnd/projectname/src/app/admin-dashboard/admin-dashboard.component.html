@@ -1,0 +1,81 @@
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="container-fluid">
+  <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center py-3 border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light w-100">
+      <a class="navbar-brand" href="#">
+        <img src="/assets/images/7487569.jpg" alt="Royal Resorts Logo" class="logo">
+      </a>
+      <div class="navbar-content">
+        <div class="navbar-title">
+          <h1>Royal Resorts</h1>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!--Header End-->
+
+  <div class="row">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <!-- Logo Section -->
+
+       <!--- <div class="d-flex justify-content-center my-3">
+          <img src="/public/asserts/admin.png" alt="Admin Logo" class="img-fluid sidebar-logo">
+        </div> -->
+        
+        <h4 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Admin Dashboard</span>
+        </h4>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+          
+            <a class="nav-link" routerLink="/dashboard/users" routerLinkActive="active"  >
+              <i class="fas fa-users"></i> Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard/rooms" routerLinkActive="active">
+              <i class="fas fa-bed"></i> Rooms
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard/roomservice" routerLinkActive="active">
+              <i class="fas fa-concierge-bell"></i> Room Service
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard/payments" routerLinkActive="active">
+              <i class="fas fa-credit-card"></i> Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard/roomstatus" routerLinkActive="active">
+              <i class="fas fa-tachometer-alt"></i> Room Status
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard/feedback" routerLinkActive="active">
+              <i class="fas fa-comments"></i> Feedbacks
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login"  (click)="logout()"  routerLinkActive="active">
+              <i class="fas fa-sign-out-alt"></i> Logout
+
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ms-sm-auto col-lg-10 px-4" id="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div *ngIf="loading" class="text-center">Loading...</div>
+<div *ngIf="error" class="alert alert-danger text-center">{{ error }}</div>
+<div *ngIf="!loading && !error" class="container">
+  <table class="table table-sm table-bordered">
+    <thead>
+      <tr>
+        <th>Booking ID</th>
+        <th>Room Number</th>
+        <th>Room Type</th>
+        <th>User Email</th>
+        <th>Booking Date</th>
+        <th>Location</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of bookingDetails">
+        <td>{{ detail.bookingId }}</td>
+        <td>{{ detail.roomNumber }}</td>
+        <td>{{ detail.roomType }}</td>
+        <td>{{ detail.userEmail }}</td>
+        <td>{{ detail.bookingDate | date:'shortDate' }}</td>
+        <td>{{ detail.location }}</td>
+        <td>{{ detail.startDate | date:'shortDate' }}</td>
+        <td>{{ detail.endDate | date:'shortDate' }}</td>
+        <td>{{ detail.isBooked ? 'Booked' : 'Cancelled' }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteBooking(detail.bookingId)">Delete</button>
+          <button class="btn btn-warning btn-sm" (click)="cancelBooking(detail.bookingId)">Cancel Booking</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

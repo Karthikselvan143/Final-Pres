@@ -1,0 +1,213 @@
+.container {
+  margin-top: 30px;
+}
+
+/* Card styling */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Card image */
+.card-image {
+  position: relative;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+/* "Booked" badge */
+.booked-badge {
+  position: absolute;
+  top: 10px;
+  right: -45px; /* Adjust position for better alignment */
+  background-color: red;
+  color: white;
+  padding: 7px 20px; /* Increased padding for better text visibility */
+  font-size: 0.9rem; /* Slightly increased font size */
+  font-weight: bold;
+  transform: rotate(45deg); /* Keep the 45-degree rotation */
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 150px; /* Set fixed width to ensure full text is visible */
+  text-align: center; /* Center the text within the badge */
+}
+
+.Cancelled-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(238, 96, 96, 0.7); /* Semi-transparent red overlay */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 1;
+  z-index: 2;
+}
+
+.card-image img {
+  z-index: 1;
+}
+
+/* Card details section */
+.card-detail {
+  padding: 15px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.card-detail span {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Footer styling */
+.card-footer {
+  background-color: #ff4081;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Styling for the card */
+.card {
+  position: relative;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Cancel Button Styling */
+.cancel-button {
+  display: block;
+  margin: 15px auto; /* Center the button */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #e66565; /* Button color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the button */
+.cancel-button:hover {
+  background-color: #f80808;
+  transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+/* Additional styling for the card-footer */
+.card-footer {
+  padding: 15px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+/* booked-rooms.component.css */
+.booked-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(20, 227, 26);
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.cancelled-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  position: relative;
+}
+.card-image {
+  position: relative;
+}
+
+.booked-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 0, 0, 0.7); /* Red background for Booked */
+  color: #fff;
+  padding: 0.5em;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.cancelled-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7); /* Darker background for Cancelled */
+  color: #fff;
+  padding: 0.5em;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.card-detail {
+  padding: 1em;
+}
+
+.card-footer {
+  padding: 1em;
+}

@@ -1,0 +1,41 @@
+<div class="container mt-5">
+ 
+
+  <!-- Search Bar -->
+  <div class="search-container mb-3">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search by Email" [(ngModel)]="searchEmail" (input)="filterStaffList()" />
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="clearSearch()">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Staff Button -->
+  <button class="btn btn-primary mb-3" (click)="openAddStaffModal()">Add Staff</button>
+
+  <!-- Cards for displaying staff data -->
+  <div class="row">
+    <!-- Loop through filteredStaffList and display data -->
+    <div class="col-md-4 mb-4" *ngFor="let staff of filteredStaffList">
+      <div class="card animate__animated animate__fadeInUp">
+        <img [src]="staff.imagePath" class="card-img-top" alt="Staff Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ staff.staffName }}</h5>
+          <p class="card-text"><strong>Email:</strong> {{ staff.email }}</p>
+          <p class="card-text"><strong>Contact:</strong> {{ staff.contact }}</p>
+          <p class="card-text"><strong>Address:</strong> {{ staff.address }}</p>
+          <p class="card-text"><strong>Rating:</strong> {{ staff.rating }}</p>
+          <p class="card-text"><strong>Available:</strong> {{ staff.isAvailable }}</p>
+          <p class="card-text"><strong>Aadhar:</strong> {{ staff.aadhar }}</p>
+          <p class="card-text"><strong>Joined Date:</strong> {{ staff.joinedDate | date }}</p>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-warning btn-sm" (click)="openEditStaffModal(staff)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteStaff(staff.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    

@@ -1,0 +1,153 @@
+<div>
+  <h2>Select Dates</h2>
+  <app-datepicker (applyDateRangeEvent)="handleApplyDateRange($event)"></app-datepicker>
+</div>
+
+<!-- Display Loading or Error Message -->
+<div *ngIf="loading" class="text-center">Loading...</div>
+<div *ngIf="error" class="alert alert-danger text-center">{{ error }}</div>
+
+<!-- Display Rooms -->
+<div *ngIf="!loading && !error && roomsVisible" class="container">
+  <div class="row">
+    <div *ngFor="let room of filteredRooms" class="col-md-4 mb-4">
+      <div class="card">
+        <!-- Main Image -->
+        <img [src]="room.imagePath" class="card-img-top" alt="Room image">
+        
+        <div class="card-body d-flex justify-content-between">
+          <div class="room-details">
+            <h5 class="card-title">{{ room.roomType }}</h5>
+            <button 
+              (click)="openModal(modalContent, room)" 
+              class="btn btn-primary" 
+              [disabled]="room.isBooked">
+              {{ room.isBooked ? 'Booked' : 'Details' }}
+            </button>
+          </div>
+          <div class="price-details text-right">
+            <span class="card-price">{{ room.price }} per night</span>
+            <button 
+            type="button" 
+            class="btn btn-success" 
+            (click)="openPaymentModal(room)" 
+            [disabled]="room.isBooked">
+            {{ room.isBooked ? 'Booked' : 'Book Now' }}
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Room Details Modal -->
+<!-- Room Details Modal -->
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Room Details</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Close click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- Simple Image Slider -->
+    <div class="modal-images-slider">
+      <div class="image-container">
+        <img *ngFor="let image of getImageList()" [src]="image" class="modal-image" alt="Room image">
+      </div>
+      <div class="slider-controls">
+        <button (click)="previousImage()" class="slider-btn">Prev</button>
+        <button (click)="nextImage()" class="slider-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- Room Details -->
+    <div class="container room-details-container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="details-box">
+            <p><strong>Price:</strong> {{ selectedRoom?.price }} per night</p>
+            <p><strong>Type:</strong> {{ selectedRoom?.roomType }}</p>
+            <p><strong>Description:</strong> {{ selectedRoom?.description }}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="details-box">
+            <p><strong>Location:</strong> {{ selectedRoom?.location }}</p>
+            <p><strong>Amenities:</strong> {{ selectedRoom?.amenities }}</p>
+            <p><strong>Rating:</strong> {{ selectedRoom?.rating }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Close click')">Close</button>
+  </div>
+</ng-template>
+<!-- Payment Modal -->
+<ng-template #paymentModalTemplate let-modal>
+
+  <div class="modal-header">
+    <h5 class="modal-title">Payment Details</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="payment-container">
+  <h1>Pay Invoice</h1>
+  <div class="card-row">
+    <img src= "https://th.bing.com/th/id/OIP.be01oPr-oQb9O4Saajx2cwHaC0?w=328&h=132&c=7&r=0&o=5&pid=1.7" alt="Visa Logo">
+    <img src="http://ts4.mm.bing.net/th?id=OIP.pL0yAs7O-twbB-41n4VngAHaEc&pid=15.1" alt="Mastercard Logo">
+    <img src="https://logodownload.org/wp-content/uploads/2014/04/amex-american-express-logo.png" alt="American Express Logo">
+    <img src="https://th.bing.com/th/id/OIP.u287nTgeRjrWUVy9ZCYIGQHaEi?rs=1&pid=ImgDetMain" alt="CRED Logo">
+  </div>
+    
+    <form (ngSubmit)="processPayment()" [formGroup]="paymentForm">
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input type="text" id="amount" class="form-control" [value]="selectedRoom?.price" disabled>
+  </div>
+  <div class="form-group">
+    <label for="cardNumber">Card Number</label>
+    <input type="text" id="cardNumber" class="form-control" formControlName="cardNumber">
+    <div *ngIf="paymentForm.get('cardNumber')?.invalid && paymentForm.get('cardNumber')?.touched" class="text-danger">
+      Card number is required and must be 16 digits.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="expiryDate">Expiry Date</label>
+    <input type="text" id="expiryDate" class="form-control" formControlName="expiryDate">
+    <div *ngIf="paymentForm.get('expiryDate')?.invalid && paymentForm.get('expiryDate')?.touched" class="text-danger">
+      Expiry date is required and must be in MM/YY format.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" class="form-control" formControlName="cvv">
+    <div *ngIf="paymentForm.get('cvv')?.invalid && paymentForm.get('cvv')?.touched" class="text-danger">
+      CVV is required and must be 3 digits.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="userEmail">Email</label>
+    <input type="email" id="userEmail" class="form-control" [value]="userEmail" disabled>
+  </div>
+
+
+
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="paymentForm.invalid">Pay</button>
+</form>
+
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.hide()">Close</button>
+  </div>
+</ng-template>

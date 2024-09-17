@@ -1,0 +1,34 @@
+<!--Header End-->
+<div class="container-fluid">
+  <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center py-3 border-bottom">
+    <div class="d-flex align-items-center">
+      <!-- Logo -->
+      <img src="/assets/images/7487569.jpg" alt="Admin Logo" class="img-fluid" style="height: 40px;">
+    </div>
+
+    <!-- Navigation Links in the center -->
+    <nav class="d-flex justify-content-center align-items-center">
+      <ul class="navbar-nav d-flex flex-row">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/userdashboard/userroom" routerLinkActive="active">Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/userdashboard/bookedrooms" routerLinkActive="active">My Bookings</a>
+        </li>
+       
+      </ul>
+    </nav>
+
+    <!-- Username and Logout Button on the right -->
+    <div class="d-flex align-items-center">
+      <span class="navbar-text me-3" *ngIf="userEmail">Hi {{ userEmail }}</span>
+      <button class="btn btn-danger" (click)="logout()" *ngIf="userEmail">Logout</button>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main role="main" class="col-md-9 ms-sm-auto col-lg-10 px-4" id="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

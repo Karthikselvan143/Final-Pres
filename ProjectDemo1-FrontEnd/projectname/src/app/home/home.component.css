@@ -1,0 +1,41 @@
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-top: 130px;  /* Space between header and video */
+  background: transparent;
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box; /* Include padding in height calculation */
+  position: relative;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 1600px; /* Adjust max-width as needed */
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+.room-video {
+  width: 100%;
+  height: auto;
+  border-radius: 15px; /* Match border radius of the container */
+  object-fit: cover; /* Ensure the video covers the container */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .video-container {
+    max-width: 90%; /* Slightly smaller width on tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .video-container {
+    max-width: 100%; /* Full width on mobile devices */
+  }
+}

@@ -1,0 +1,150 @@
+/* Container styling */
+.container {
+  margin-top: 5rem; /* Space from the top */
+}
+
+/* Search Bar Styling */
+.search-container {
+  margin-bottom: 1rem; /* Space below the search bar */
+}
+
+.input-group {
+  max-width: 400px; /* Adjust width as needed */
+  margin: 0 auto; /* Center the search bar */
+}
+
+.input-group .form-control {
+  background-color: #001f3f; /* Navy Blue Background */
+  color: gold; /* Gold Font Color */
+  border: 1px solid #0056b3; /* Navy Blue Border */
+}
+
+.input-group .btn-outline-secondary {
+  background-color: #001f3f; /* Navy Blue Background */
+  color: gold; /* Gold Font Color */
+  border: 1px solid #0056b3; /* Navy Blue Border */
+}
+
+.input-group .btn-outline-secondary:hover {
+  background-color: #0056b3; /* Darker Navy Blue */
+  color: gold; /* Gold Font Color */
+}
+
+/* Add Staff Button Styling */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+/* Card Styling */
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #001f3f; /* Navy Blue Background for Cards */
+  color: gold; /* Gold Font Color */
+  margin-bottom: 1rem;
+  transform: translateX(0); /* Start position for slide-in effect */
+}
+
+/* Card Hover Effect */
+.card:hover {
+  transform: translateX(10px); /* Slide effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Card Image Styling */
+.card-img-top {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Card Body Styling */
+.card-body {
+  padding: 1rem;
+  background-color: #001f3f; /* Navy Blue Background for Content */
+  color: gold; /* Gold Font Color for Content */
+}
+
+/* Card Title Styling */
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Card Text Styling */
+.card-text {
+  margin-bottom: 0.5rem;
+}
+
+/* Button Styling */
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  transform: scale(1.05);
+}
+
+/* Animation for Card Appearance */
+.animate__animated {
+  animation: fadeInUp 0.6s ease-out; /* Fade-in-up animation */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 1 1 100%;
+    padding: 0.5rem;
+  }
+
+  .card-img-top {
+    height: 150px; /* Adjust height for smaller screens */
+  }
+
+  .input-group {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+}

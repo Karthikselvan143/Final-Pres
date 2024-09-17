@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center full-height">
+    <div class="col-md-8 col-lg-6">
+      <div class="card register-card text-center animated-form">
+        <div class="card-body">
+          <h4 class="card-title mb-4 text-center">Register</h4>
+
+          <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+            <!-- First Name Input -->
+            <div class="form-group">
+              <label for="firstName" class="form-label">First Name:</label>
+              <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" 
+                (ngModelChange)="onFieldTouched('firstName')" (blur)="onFieldTouched('firstName')" 
+                class="form-control" placeholder="Enter your first name">
+              <div *ngIf="formErrors.firstName && touchedFields.firstName" class="text-danger">
+                {{ formErrors.firstName }}
+              </div>
+            </div>
+
+            <!-- Last Name Input -->
+            <div class="form-group">
+              <label for="lastName" class="form-label">Last Name:</label>
+              <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" 
+                (ngModelChange)="onFieldTouched('lastName')" (blur)="onFieldTouched('lastName')" 
+                class="form-control" placeholder="Enter your last name">
+              <div *ngIf="formErrors.lastName && touchedFields.lastName" class="text-danger">
+                {{ formErrors.lastName }}
+              </div>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" id="email" name="email" [(ngModel)]="email" 
+                (ngModelChange)="onFieldTouched('email')" (blur)="onFieldTouched('email')" 
+                class="form-control" placeholder="Enter your email">
+              <div *ngIf="formErrors.email && touchedFields.email" class="text-danger">
+                {{ formErrors.email }}
+              </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group">
+              <label for="password" class="form-label">Password:</label>
+              <div class="input-group">
+                <input [type]="showPassword ? 'text' : 'password'" id="password" name="password" 
+                  [(ngModel)]="password" (ngModelChange)="onFieldTouched('password')" 
+                  (blur)="onFieldTouched('password')" class="form-control" placeholder="Enter your password">
+              </div>
+              <div *ngIf="formErrors.password && touchedFields.password" class="text-danger">
+                {{ formErrors.password }}
+              </div>
+            </div>
+
+            <!-- Confirm Password Input -->
+            <div class="form-group">
+              <label for="confirmPassword" class="form-label">Confirm Password:</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" 
+                [(ngModel)]="confirmPassword" (ngModelChange)="onFieldTouched('confirmPassword')" 
+                (blur)="onFieldTouched('confirmPassword')" class="form-control" placeholder="Confirm your password">
+              <div *ngIf="formErrors.confirmPassword && touchedFields.confirmPassword" class="text-danger">
+                {{ formErrors.confirmPassword }}
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-gradient btn-block mt-4" [disabled]="!isFormValid()">Register</button>
+          </form>
+
+          <!-- Login Link -->
+          <div class="text-center mt-3">
+            <a routerLink="/login" class="login-link">Already have an account? Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

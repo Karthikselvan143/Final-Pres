@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="container">
+  <h2>Room Status</h2>
+  
+  <!-- Buttons for toggling views -->
+  <div class="header">
+    <button (click)="showAvailableRooms()" [ngClass]="{'active': displayedRooms === availableRooms}">
+      Available Rooms
+    </button>
+    <button (click)="showBookedRooms()" [ngClass]="{'active': displayedRooms === bookedRooms}">
+      Booked Rooms
+    </button>
+  </div>
+
+  <!-- Display Room Numbers in Columns Based on Selected View -->
+  <div *ngIf="loading" class="text-center">Loading...</div>
+  <div *ngIf="error" class="alert alert-danger text-center">{{ error }}</div>
+
+  <!-- Content Wrapper -->
+  <div class="content-wrapper">
+    <!-- Available Rooms Column -->
+    <div class="column available-rooms" [ngClass]="{'active': displayedRooms === availableRooms, 'inactive': displayedRooms !== availableRooms}">
+      <div class="column-header">
+        <i class="fas fa-check-circle available-icon"></i>
+        <h3>Available Rooms</h3>
+      </div>
+      <hr>
+      <ul class="room-list">
+        <li *ngFor="let room of availableRooms">
+          <span class="badge">{{ room.roomNumber }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Booked Rooms Column -->
+    <div class="column booked-rooms" [ngClass]="{'active': displayedRooms === bookedRooms, 'inactive': displayedRooms !== bookedRooms}">
+      <div class="column-header">
+        <i class="fas fa-times-circle booked-icon"></i>
+        <h3>Booked Rooms</h3>
+      </div>
+      <hr>
+      <ul class="room-list">
+        <li *ngFor="let room of bookedRooms">
+          <span class="badge">{{ room.roomNumber }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

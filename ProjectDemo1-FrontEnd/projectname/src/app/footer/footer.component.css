@@ -1,0 +1,54 @@
+/* Footer background and text color */
+.cr{
+    background-color:  #001f3f;;
+  }
+  .footer {
+      background-color: #001f3f;; /* Deep blue background color */
+      color:  #fff; /* Yellow text color */
+    }
+    
+    .footer a {
+      color: yellow; /* Ensure links are yellow */
+    }
+    
+    .footer a:hover {
+      color: #fff; /* Change link color on hover if needed */
+    }
+    
+    /* Specific styles for the widgets */
+    .footer .widget {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Light separator for widget sections */
+      padding-bottom: 1rem; /* Space between widgets */
+    }
+    
+    /* Style for the form input and button */
+    .footer .input-group .form-control {
+      background-color:transparent; /* Dark background for the input */
+      color: yellow; /* Yellow text color */
+      border: 1px solid #333; /* Border color for the input */
+    }
+    
+    .footer .input-group .form-control::placeholder {
+      color: yellow; /* Placeholder text color */
+    }
+    
+    .footer .btn-primary {
+      background-color: yellow; /* Button background color */
+      color: #000036; /* Button text color */
+      border: none; /* Remove default border */
+    }
+    
+    .footer .btn-primary:hover {
+      background-color: #fff; /* Button background color on hover */
+      color: #000036; /* Button text color on hover */
+    }
+    
+    /* Social media icons */
+    .footer .social-media-wrapper svg {
+      fill: yellow; /* Color for social media icons */
+    }
+    
+    .footer .social-media-wrapper a:hover svg {
+      fill: #fff; /* Change icon color on hover if needed */
+    }
+    

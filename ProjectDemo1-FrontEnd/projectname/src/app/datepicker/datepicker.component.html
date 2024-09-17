@@ -1,0 +1,38 @@
+<div class="container">
+  <!-- Input for 'startdate', 'enddate', location dropdown, and apply button -->
+  <div class="date-range-horizontal">
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <select id="location" [(ngModel)]="newDatePicker.location">
+        <option value="" disabled>Select location</option>
+        <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+      </select>
+    </div>
+ 
+    <div class="form-group">
+      <label for="startdate">Start:</label>
+      <input id="startdate" type="date" [(ngModel)]="newDatePicker.startdate" [min]="today" (change)="updateMinEndDate()" />
+    </div>
+
+    <div class="form-group">
+      <label for="enddate">End:</label>
+      <input id="enddate" type="date" [(ngModel)]="newDatePicker.enddate" [min]="minEndDate" />
+    </div>
+
+    <div class="form-group">
+      <label for="persons">Persons:</label>
+      <div class="person-selector">
+        <button (click)="decreasePersons()">-</button>
+        <input id="persons" type="number" [(ngModel)]="numberOfPersons" min="1" />
+        <button (click)="increasePersons()">+</button>
+      </div>
+    </div>
+
+    <button (click)="applyDateRange()" class="apply-b">Apply</button>
+  </div>
+
+  <!-- Display total days if calculated -->
+  <div *ngIf="totalDays > 0" class="total-amount">
+    Total amount = {{ totalDays }} days
+  </div>
+</div>

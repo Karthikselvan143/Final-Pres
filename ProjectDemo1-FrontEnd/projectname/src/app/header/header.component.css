@@ -1,0 +1,50 @@
+/* Ensure navbar brand has proper color and hover effect */
+
+.navbar{
+  background-color: #001f3f !important;
+}
+.navbar-brand {
+  color: #ffcc00; /* Golden color */
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #ffffff; /* White color on hover */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Style for nav links */
+.navbar-nav .nav-link {
+  color: #ffcc00; /* Golden color */
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  margin-right: 15px; /* Space between links */
+}
+
+/* Remove margin from the last link */
+.navbar-nav .nav-link:last-child {
+  margin-right: 0;
+}
+
+/* Style for active and hover states */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #ffffff; /* White color on hover */
+  background-color: #004080; /* Dark blue background on hover */
+  border-radius: 5px;
+}
+
+/* Style for dropdown items */
+.dropdown-item {
+  color: #ffcc00; /* Golden color */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  color: #ffffff; /* White color on hover */
+  background-color: #004080; /* Dark blue background on hover */
+}

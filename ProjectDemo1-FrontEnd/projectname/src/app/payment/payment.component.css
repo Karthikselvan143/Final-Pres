@@ -1,0 +1,83 @@
+/* Ensure the table takes full width and adjust spacing */
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-x: auto; /* Handle horizontal overflow for responsive design */
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border: 1px solid #dee2e6;
+  border-collapse: collapse;
+  animation: slideIn 1s ease-out; /* Animation for data */
+}
+
+/* Table header styling */
+.table thead th {
+  background-color: #001f3f; /* Navy blue background */
+  color: #ffd700; /* Gold text color */
+  text-align: center;
+  position: sticky; /* Make header stick to the top */
+  top: 0; /* Stick to the top of the container */
+  z-index: 1; /* Ensure header is above other content */
+  padding: 0.5rem; /* Padding for better spacing */
+  border-bottom: 2px solid #dee2e6; /* Bottom border for better separation */
+}
+
+/* Table body row styling */
+.table tbody tr {
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Table body row hover effect */
+.table tbody tr:hover {
+  background-color: #f1f1f1; /* Light grey background on hover */
+  transform: scale(1.02); /* Slightly enlarge row on hover */
+}
+
+/* Styling for table cells */
+.table td {
+  vertical-align: middle;
+  padding: 0.5rem; /* Padding for table cells */
+}
+
+/* Styling for buttons */
+.btn-sm {
+  padding: 0.25rem 0.5rem; /* Smaller button padding */
+  font-size: 0.75rem; /* Smaller font size for buttons */
+  margin: 0.1rem; /* Small margin around buttons */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Red color for delete button */
+  border-color: #dc3545;
+}
+
+.btn-warning {
+  background-color: #ffc107; /* Yellow color for cancel button */
+  border-color: #ffc107;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table td button {
+    display: block;
+    margin: 0.2rem auto;
+  }
+}
+
+/* Animation for data rows */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

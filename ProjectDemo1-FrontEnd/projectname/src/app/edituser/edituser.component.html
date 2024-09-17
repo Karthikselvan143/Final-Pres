@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="container mt-4">
+  <div class="logo-container text-center mb-4">
+    <i class="fas fa-user fa-5x logo-icon"></i> <!-- Replace this with your desired Font Awesome icon -->
+  </div>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input type="text" id="id" formControlName="id" class="form-control" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName" class="form-control" required>
+      <div *ngIf="userForm.get('firstName')?.touched || userForm.get('firstName')?.dirty">
+        <div *ngIf="userForm.get('firstName')?.errors?.['required']" class="error-message">
+          First Name is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName" class="form-control" required>
+      <div *ngIf="userForm.get('lastName')?.touched || userForm.get('lastName')?.dirty">
+        <div *ngIf="userForm.get('lastName')?.errors?.['required']" class="error-message">
+          Last Name is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" class="form-control" required>
+      <div *ngIf="userForm.get('email')?.touched || userForm.get('email')?.dirty">
+        <div *ngIf="userForm.get('email')?.errors?.['required']" class="error-message">
+          Email is required.
+        </div>
+        <div *ngIf="userForm.get('email')?.errors?.['email']" class="error-message">
+          Invalid email format.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="isActive">Active</label>
+      <select id="isActive" formControlName="isActive" class="form-control" required>
+        <option value="">Select Status</option>
+        <option value="1">Active</option>
+        <option value="0">Inactive</option>
+      </select>
+      <div *ngIf="userForm.get('isActive')?.touched || userForm.get('isActive')?.dirty">
+        <div *ngIf="userForm.get('isActive')?.errors?.['required']" class="error-message">
+          Status is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Update</button>
+      <button type="button" class="btn btn-secondary" (click)="router.navigate(['/dashboard/users'])">Cancel</button>
+    </div>
+  </form>
+</div>

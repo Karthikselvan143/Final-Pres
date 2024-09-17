@@ -1,0 +1,9 @@
+<!-- home.component.html -->
+<section class="home-section" (mouseenter)="playVideo()" (mouseleave)="pauseVideo()">
+  <div class="video-container">
+    <video #roomVideo muted loop class="room-video" playsinline>
+      <source src="/assets/images/homefin.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>

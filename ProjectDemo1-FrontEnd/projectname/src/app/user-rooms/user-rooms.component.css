@@ -1,0 +1,671 @@
+/* Full Width and Centering */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Date Range Inputs */
+.date-range-horizontal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* Person Selector */
+.person-selector {
+  display: flex;
+  align-items: center;
+}
+
+.person-selector button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.person-selector button:hover {
+  background-color: #0056b3;
+}
+
+/* Apply Button */
+.apply-b {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+.apply-b:hover {
+  background-color: #218838;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  background-color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-details {
+  flex: 1;
+}
+
+.price-details {
+  text-align: right;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 0.5rem;
+}
+
+/* Modal Image Slider */
+.modal-images-slider {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.image-container {
+  display: flex;
+  flex: 1; /* Allow the image container to take up available space */
+  overflow: hidden;
+  height: 100%;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%; /* Stretch image to fill container */
+  object-fit: cover; /* Maintain image aspect ratio */
+  transition: transform 0.5s ease;
+}
+
+.modal-image.active {
+  transform: scale(1.1);
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Room Details Layout */
+.room-details-container {
+  margin-top: 1rem;
+}
+
+.details-box {
+  flex: 0.5; /* Reduce width of the details box */
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column; /* Stack the details vertically */
+  justify-content: flex-start; /* Align items to the top */
+  height: 100%; /* Make the details box as tall as the slider */
+  margin-left:20px;
+ 
+}
+
+.details-box p {
+  margin: 0.5rem 0;
+  margin-left: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .details-box {
+    padding: 0.5rem;
+  }
+
+  .image-container {
+    flex-direction: column;
+  }
+}
+.modal-images-slider {
+  position: relative;
+}
+
+.image-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.modal-image {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slider-controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slider-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .col-md-4 {
+      height:350px ;
+      width: 350px;
+  }
+}
+
+.modal-body {
+  position: relative;
+  height: 750px;
+  width:500px;
+  padding: var(--bs-modal-padding);
+}
+.modal-lg, .modal-xl {
+  --bs-modal-width: 500px  !important; 
+}
+
+.modal-content {
+  height: 63% !important;
+
+}
+/* Modal Image Slider */
+.modal-images-slider {
+  display: flex; /* Side-by-side layout for image and details */
+  align-items: stretch; /* Align content to the top */
+  gap: 1rem; /* Space between slider and details */
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.image-container {
+  flex: 1; /* Make the image container take up available space */
+  overflow: hidden;
+}
+
+.modal-image {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+/* Details Box Styling */
+.details-box {
+  flex: 0.5; /* Reduce width of the details box */
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column; /* Stack the details vertically */
+  justify-content: flex-start; /* Align items to the top */
+}
+
+.details-box p {
+  margin: 0.5rem 0;
+}
+
+/* Reduce height of the modal content based on content */
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  height: auto; /* Dynamic height adjustment */
+  width: 100%;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-images-slider {
+    flex-direction: column; /* Stack slider and details on smaller screens */
+  }
+
+  .details-box {
+    width: 100%; /* Full width for details on small screens */
+    margin-left: 0; /* Remove left margin for small screens */
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-details {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.room-details h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price-details {
+  text-align: right;
+}
+
+.card-price {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff6f3d;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #e55b2a;
+  color: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  color: white;
+}
+
+.btn[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.card-body .btn {
+  flex: 1;
+}
+
+.btn-primary,
+.btn-success {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+  background-color: #ff4500;
+  color: black;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.btn-primary {
+  background-color: #ff6f3d;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ff4500;
+  color: black;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+/* Payment Modal Container */
+.modal-dialog {
+  max-width: 450px;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal Header */
+.modal-header {
+  background-color: #f9fafb;
+  padding: 15px 20px;
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.close {
+  font-size: 1.3rem;
+  color: #888;
+  opacity: 0.6;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 30px 25px;
+  background-color: #ffffff;
+  line-height: 1.8;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.text-danger {
+  font-size: 12px;
+  color: #e74c3c;
+}
+
+/* Submit Button Styles */
+.btn-primary {
+  background-image: linear-gradient(45deg, #6c63ff, #9b9aff);
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 30px;
+  width: 100%;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-image: linear-gradient(45deg, #5a54e0, #7e7aff);
+}
+
+/* Close Button Styles */
+.btn-secondary {
+  background-color: #f1f1f1;
+  border-color: #e2e2e2;
+  color: #555;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e2e2;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 15px 20px;
+  background-color: #f9fafb;
+  border-top: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Payment Form Specifics */
+input[type="text"]:disabled {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+  .modal-dialog {
+    max-width: 100%;
+    margin: 10px;
+  }
+  
+  .btn-primary {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+.payment-container {
+  max-width: 600px; /* Doubled the width */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background-color: #6c757d;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  width: 100%;
+}
+
+.modal-header {
+  padding: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 10px;
+  border-top: 1px solid #e9ecef;
+}
+
+.text-danger {
+  color: #dc3545;
+  font-size: 14px;
+}
+
+
+
+
+
+.payment-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-row img {
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.card-row img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  filter: grayscale(0);
+}
+
+.card-row img:active {
+  transform: scale(0.9);
+}

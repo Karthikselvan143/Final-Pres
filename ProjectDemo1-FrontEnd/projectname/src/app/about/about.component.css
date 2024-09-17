@@ -1,0 +1,153 @@
+/* Global Styles */
+.about-container {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  padding: 0 50px;
+}
+
+/* Hover Effects */
+.about-text:hover, .mission:hover, .vision:hover, .team-member:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* About Banner Section */
+.about-banner {
+  /* background: url('assets/banner.jpg') no-repeat center center/cover; */
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}
+
+.about-banner h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-banner p {
+  font-size: 1.25rem;
+}
+
+/* About Content Section */
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.about-content .about-image {
+  flex: 1 1 50%;
+}
+
+.about-content .about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-content .about-text {
+  flex: 1 1 50%;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Mission and Vision Section */
+.mission-vision {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 50px 0;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mission, .vision {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.mission h2, .vision h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mission p, .vision p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Team Section */
+.team {
+  text-align: center;
+  margin: 50px 0;
+  padding: 20px;
+}
+
+.team h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  flex: 1 1 30%;
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Animations */
+.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover Effect */
+.team-member img:hover {
+  transform: scale(1.1);
+}

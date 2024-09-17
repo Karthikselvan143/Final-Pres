@@ -1,0 +1,264 @@
+/* Container for the entire card */
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  background-color: #001f3f; /* Navy Blue Background */
+  color: gold; /* Gold Font Color */
+  position: relative;
+  height: auto; /* Auto height to accommodate dynamic content */
+  width: 100%; /* Full width */
+  max-width: 800px; /* Fixed maximum width */
+  margin: auto; /* Center card */
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  opacity: 0; /* Start hidden for fade-in animation */
+  transform: translateX(40px); /* Start slightly below */
+  animation: slideIn 0.5s forwards; /* Animate card appearance */
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Room Number Badge */
+.room-number-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #0056b3; /* Darker Navy Blue */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 1rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+/* Main Image Container */
+.image-container {
+  flex: 2;
+  position: relative;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%; /* Adjusted to fit within the card height */
+  object-fit: cover;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ebcc1d; /* Navy Blue Border */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-img:hover {
+  transform: scale(1.05);
+  border-color: #fff; /* Change border color on hover */
+}
+
+/* Central Images Container */
+.central-images-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.central-images {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill the remaining height of the card */
+  overflow: hidden;
+}
+
+/* Wrapper for small images */
+.image-wrapper {
+  flex: 1;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  margin-bottom: 0.5rem; /* Space between images */
+}
+
+.image-wrapper:last-child {
+  margin-bottom: 0; /* Remove margin for last image */
+}
+
+.image-wrapper:hover {
+  border-color: #0056b3; /* Navy Blue Border on Hover */
+  transform: scale(1.05);
+}
+
+/* Small Image Styling */
+.small-image {
+  width: 100%;
+  height: 100%; /* Fit the wrapper height */
+  object-fit: cover;
+}
+
+/* Form Container (hidden by default) */
+.form-container {
+  display: none; /* Hidden by default */
+  padding: 1rem;
+  background-color: #001f3f; /* Match card background */
+  color: gold; /* Gold Font Color */
+}
+
+/* Show Form */
+.card.editing .form-container {
+  display: block; /* Show form when card has 'editing' class */
+}
+
+/* Content Container */
+.content-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40%; /* Fill the remaining height of the card */
+}
+
+/* Button Styling */
+button.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+  transform: scale(1.05);
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+  transform: scale(1.05);
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  transform: scale(1.05);
+}
+
+/* Button Group Styling */
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Search Bar Styling */
+.add-room-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-bar-container {
+  flex: 1;
+  max-width: 300px; /* Adjust as needed */
+  margin-left: 20px;
+}
+
+.search-bar-container select {
+  background-color: #001f3f; /* Navy Blue Background */
+  color: gold; /* Gold Font Color */
+  border: 1px solid #0056b3; /* Navy Blue Border */
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  height: 2.5rem; /* Smaller Height */
+  width: 200px; /* Fixed Width */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar-container select:hover {
+  background-color: #0056b3; /* Darker Navy Blue on Hover */
+  border-color: #001f3f; /* Darker Border on Hover */
+}
+
+/* Add Button Styling */
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  padding: 0.75rem 1.5rem; /* Larger Button */
+  font-size: 1.1rem; /* Larger Font Size */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: bounce 0.6s ease;
+}
+
+/* Button bounce animation */
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row.no-gutters {
+    flex-direction: column;
+  }
+
+  .col-md-4 {
+    flex: 1 1 auto;
+    padding: 0.5rem;
+  }
+
+  .image-container, .content-container {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .card-img {
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .central-images-container {
+    flex-direction: row;
+  }
+
+  .small-image {
+    height: 100px; /* Adjusted height for smaller screens */
+  }
+
+  .search-bar-container select {
+    width: 100%; /* Full width on smaller screens */
+  }
+}

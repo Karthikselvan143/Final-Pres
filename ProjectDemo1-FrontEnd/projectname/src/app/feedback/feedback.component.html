@@ -1,0 +1,66 @@
+<div class="feedback-container" [@fadeInOut]>
+  <h2>Feedback List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Message</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fb of feedbacks">
+        <td>{{ fb.name }}</td>
+        <td>{{ fb.email }}</td>
+        <td>{{ fb.phoneNumber }}</td>
+        <td>{{ fb.message }}</td>
+        <td>
+          <!-- <button class="edit" (click)="editFeedback(fb)">
+            <i class="fas fa-edit"></i><span></span>
+          </button> -->
+          <button class="delete" (click)="deleteFeedback(fb.id)">
+            <i class="fas fa-trash"></i><span></span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <h2>{{ isEditing ? 'Edit Feedback' : 'Add Feedback' }}</h2>
+  <form #feedbackForm="ngForm" (ngSubmit)="isEditing ? updateFeedback(feedback.id) : createFeedback()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" [(ngModel)]="feedback.name" name="name" required #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+        Name is required.
+      </div>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="feedback.email" name="email" required email #email="ngModel">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+        <div *ngIf="email.errors && email.errors['required']">Email is required.</div>
+        <div *ngIf="email.errors && email.errors['email']">Invalid email format.</div>
+      </div>
+    </div>
+    <div>
+      <label for="phoneNumber">Phone Number:</label>
+      <input id="phoneNumber" [(ngModel)]="feedback.phoneNumber" name="phoneNumber" required pattern="\\d{9}" #phoneNumber="ngModel">
+      <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="error">
+        <div *ngIf="phoneNumber.errors && phoneNumber.errors['required']">Phone number is required.</div>
+        <div *ngIf="phoneNumber.errors && phoneNumber.errors['pattern']">Phone number must be exactly 10 digits.</div>
+      </div>
+    </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" [(ngModel)]="feedback.message" name="message" required #message="ngModel"></textarea>
+      <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
+        Message is required.
+      </div>
+    </div>
+    <button type="submit" [disabled]="feedbackForm.invalid">{{ isEditing ? 'Update' : 'Create' }}</button>
+    <button type="button" (click)="resetForm()">Cancel</button>
+  </form>
+</div> -->

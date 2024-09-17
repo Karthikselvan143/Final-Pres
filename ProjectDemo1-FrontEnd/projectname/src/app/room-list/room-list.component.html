@@ -1,0 +1,130 @@
+<div class="container">
+
+  <div class="row mb-3">
+    <div class="add-room-search-container">
+      <button class="btn btn-success" (click)="openAddRoomModal()">Add </button>
+    
+      <!-- Search Bar -->
+      <div class="search-bar-container">
+        <select class="form-control" [(ngModel)]="selectedRoomType" (change)="filterRooms()">
+          <option value="">All Room Types</option>
+          <option *ngFor="let type of roomTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+    </div>
+    
+
+  <div class="row">
+    <div class="col-md-12" *ngFor="let room of filteredRooms"> <!-- Changed from 'rooms' to 'filteredRooms' -->
+      <div class="card mb-3 room-card">
+        <div class="room-number-badge">{{ room.roomNumber }}</div>
+        <div class="row no-gutters">
+          <!-- Image Container -->
+          <div class="col-md-4 image-container">
+            <ng-container *ngIf="room">
+              <img *ngIf="room.imagePath" [src]="room.imagePath" class="card-img" alt="Room Image">
+            </ng-container>
+          </div>
+          
+          <!-- Central Images -->
+          <div class="col-md-4 central-images-container">
+            <div class="central-images">
+              <ng-container *ngIf="room.bathRoom">
+                <div class="image-wrapper">
+                  <img [src]="room.bathRoom" class="small-image" alt="Bathroom Image">
+                  <p></p>
+                </div>
+              </ng-container>
+              <ng-container *ngIf="room.hall">
+                <div class="image-wrapper">
+                  <img [src]="room.hall" class="small-image" alt="Hall Image">
+                  <p></p>
+                </div>
+              </ng-container>
+             
+            </div>
+          </div>
+
+          <!-- Content Container -->
+          <div class="col-md-4 content-container">
+            <div class="card-body">
+              <ng-container *ngIf="room.editMode">
+                <!-- Edit form for updating room -->
+                <form (ngSubmit)="updateRoom(room)">
+                  <div class="form-group">
+                    <label for="roomNumber">Room Number</label>
+                    <input type="text" id="roomNumber" class="form-control" [(ngModel)]="room.roomNumber" name="roomNumber" readonly required>
+                  </div>
+                  <div class="form-group">
+                    <label for="roomType">Room Type</label>
+                    <select id="roomType" class="form-control" [(ngModel)]="room.roomType" name="roomType" required>
+                      <option value=""></option>
+                      <option *ngFor="let type of roomTypes" [value]="type">{{ type }}</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" class="form-control" [(ngModel)]="room.price" name="price" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="image">Image URL</label>
+                    <input type="text" id="image" class="form-control" [(ngModel)]="room.imagePath" name="image" placeholder="Enter image URL">
+                  </div>
+                  <div class="form-group">
+                    <label for="hall">Hall</label>
+                    <input type="text" id="hall" class="form-control" [(ngModel)]="room.hall" name="hall" placeholder="Enter image URL">
+                  </div>
+                  <div class="form-group">
+                    <label for="bathRoom">bathRoom</label>
+                    <input type="text" id="bathRoom" class="form-control" [(ngModel)]="room.bathRoom" name="bathRoom" placeholder="Enter image URL">
+                  </div>
+                
+                  <div class="form-group">
+                    <label for="location">Location</label>
+                    <select id="location" class="form-control" [(ngModel)]="room.location" name="location" required>
+                      <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <input type="number" id="rating" class="form-control" [(ngModel)]="room.rating" name="rating" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" class="form-control" [(ngModel)]="room.description" name="description" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="isAvailable">Available</label>
+                    <select id="isAvailable" formControlName="isAvailable"  [(ngModel)]="room.description" class="form-control">
+                      <option [value]="true">Yes</option>
+                      <option [value]="false">No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="amenities">Amenities</label>
+                    <input type="text" id="amenities" class="form-control" [(ngModel)]="room.amenities" name="amenities" placeholder="Enter amenities">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-secondary" (click)="cancelEdit(room)">Cancel</button>
+                </form>
+              </ng-container>
+              <ng-container *ngIf="!room.editMode">
+                <p class="card-text"><strong>Room Type:</strong> {{ room.roomType }}</p>
+                <p class="card-text"><strong>Price:</strong> {{ room.price | currency }}</p>
+                <p class="card-text"><strong>Location:</strong> {{ room.location }}</p>
+                <p class="card-text"><strong>Description:</strong> {{ room.description }}</p>
+                <p class="card-text"><strong>Rating:</strong> {{ room.rating }} / 5</p>
+                <p class="card-text"><strong>Amenities:</strong> {{ room.amenities }}</p>
+
+                <div class="button-group">
+                  <button class="btn btn-primary" (click)="editRoom(room)">Edit</button>
+                  <button class="btn btn-danger" (click)="deleteRoom(room.id)">Delete</button>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,148 @@
+/* Modal Styling */
+.modal-dialog {
+  width: 70vw; /* Adjust to suit your needs */
+  max-width: 800px; /* Maximum width to prevent excessive size */
+  margin: 1.75rem auto; /* Center the modal */
+}
+/* staff-modal.component.css */
+
+img {
+  max-width: 100%; /* Ensure images fit within their container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Hide overflow for rounded corners */
+}
+
+/* Modal Header */
+.modal-header {
+  background-color: #007bff; /* Header background color */
+  color: #fff; /* Header text color */
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  animation: fadeIn 0.5s ease-out; /* Header fade-in animation */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.close {
+  color: #fff;
+  opacity: 0.75;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px;
+  background-color: #f8f9fa;
+  animation: slideIn 0.5s ease-out; /* Body slide-in animation */
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 1rem;
+  position: relative;
+  animation: fadeIn 0.5s ease-out;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+input.form-control,
+select.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input.form-control:focus,
+select.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-danger {
+  color: #dc3545;
+  font-size: 0.875rem;
+  position: absolute;
+  bottom: -1.25rem;
+  left: 0;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  text-align: right;
+  background-color: #f1f1f1;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

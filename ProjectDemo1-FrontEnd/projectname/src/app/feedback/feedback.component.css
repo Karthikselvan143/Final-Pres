@@ -1,0 +1,327 @@
+.feedback-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #001f3f; /* Navy blue background */
+  color: #fff; /* White text for contrast */
+}
+
+/* Header styling */
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #ffd700; /* Gold color for headings */
+  text-align: center;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+table:hover {
+  transform: scale(1.02); /* Slight zoom effect on table hover */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+thead th {
+  background-color: #001f3f; /* Navy blue background for the header */
+  color: #ffd700; /* Gold text for column headers */
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+thead th:hover {
+  background-color: #003366; /* Darker navy blue on hover */
+}
+
+tbody td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+tbody tr {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue background on row hover */
+  transform: scale(1.01); /* Slight zoom effect on row hover */
+}
+
+/* Button Styling */
+button[type="submit"],
+button[type="button"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 10px; /* Space between buttons */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slight zoom effect on button hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on button hover */
+}
+
+button[type="button"] {
+  background-color: #6c757d;
+}
+
+button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+/* Form Styling */
+form {
+  padding: 20px;
+  background-color: #fff;
+  color:gold;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+  background-color: #001f3f; /* Navy blue background on hover */
+  color: #e9ca1b; /* Gold text color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on form hover */
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.feedback-container {
+  animation: bounceIn 0.6s ease-out;
+}
+
+table,
+form {
+  animation: slideIn 0.6s ease-out;
+}
+
+/* General Button Styling */
+button {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #4a9cee; /* Light button color */
+  outline: none;
+  transition: color 0.3s ease;
+  z-index: 0;
+}
+
+/* Edit Button */
+button.edit {
+  background-color: #ffd700; /* Gold color for Edit */
+}
+
+button.edit::before {
+  background-color: rgba(255, 215, 0, 0.5); /* Gold gradient for Edit button hover */
+}
+
+/* Delete Button */
+button.delete {
+  background-color: #ff6347; /* Light red for Delete */
+}
+
+button.delete::before {
+  background-color: rgba(255, 99, 71, 0.5); /* Light red gradient for Delete button hover */
+}
+
+/* Button Hover Effect */
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+  transition: left 1.5s ease-in-out;
+  z-index: 1;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  color: #fff;
+}
+
+/* Edit Button Hover Effect */
+button.edit:hover {
+  background-color: #f0e68c; /* Light gold */
+  color: #fff;
+}
+
+button.edit:hover::before {
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.5), rgba(255, 215, 0, 0.3)); /* Gold gradient */
+}
+
+/* Delete Button Hover Effect */
+button.delete:hover {
+  background-color: #dc3545; /* Bright red */
+  color: #fff;
+}
+
+button.delete:hover::before {
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.5), rgba(139, 0, 0, 0.5)); /* Bright red gradient */
+}
+
+/* Ensure button text stays on top of the gradient */
+button span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Icons */
+button.edit i,
+button.delete i {
+  margin-right: 8px;
+  font-size: 1rem; /* Adjust icon size as needed */
+}
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin-top: 0;
+  color: #ffd700; /* Gold color for modal heading */
+}
+
+.modal form {
+  padding: 0;
+}
+
+.modal form div {
+  margin-bottom: 15px;
+}
+
+.modal form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.modal form input,
+.modal form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal form button {
+  margin-right: 10px;
+}
+td button {
+  margin-right: 10px; /* Add space between buttons */
+}

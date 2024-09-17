@@ -1,0 +1,120 @@
+/* Keyframes for Slide-Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Table Animation */
+.table-wrapper {
+  overflow: hidden; /* Hide overflow to maintain smoothness */
+  opacity: 0; /* Start with hidden table */
+  animation: slideUp 1s ease-out forwards; /* Apply slide-up animation */
+}
+
+/* Centered Search Bar Container */
+.search-bar-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-bottom: 1rem;
+}
+
+/* Search Bar Styling */
+.search-input {
+  width: 300px;
+  background-color: #001f3f; /* Dark blue background */
+  color: yellow; /* Yellow text */
+  border: 1px solid #fff; /* White border for visibility */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0.5rem; /* Padding for input */
+}
+
+.search-input::placeholder {
+  color: yellow; /* Yellow placeholder text */
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.table th, .table td {
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.table thead th {
+  background-color: #003366; /* Navy blue header background */
+  color: #ffffff; /* White text */
+  font-weight: bold;
+}
+
+/* Row Hover Effect */
+.table tbody tr:hover {
+  background-color: #e2e2e2; /* Light gray background on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+}
+
+.table tbody td {
+  text-align: center;
+}
+
+/* Button Styling */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+  background-color: rgb(238, 198, 19); /* Blue background */
+  color: #ffffff; /* White text */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Red background */
+  color: #ffffff; /* White text */
+}
+
+.btn-primary:hover {
+  background-color: rgb(238, 198, 19); /* Darker blue */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Darker red */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.btn-group .btn {
+  margin: 0; /* Remove default margin */
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .table th, .table td {
+    padding: 0.5rem;
+  }
+}

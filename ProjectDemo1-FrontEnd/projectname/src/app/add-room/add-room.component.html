@@ -1,0 +1,140 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Room</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="roomForm" (ngSubmit)="onSubmit()">
+    <!-- Room Number -->
+    <div class="form-group">
+      <label for="roomNumber">Room Number</label>
+      <input id="roomNumber" type="number" formControlName="roomNumber" class="form-control">
+      <div *ngIf="roomForm.get('roomNumber')?.invalid && roomForm.get('roomNumber')?.touched" class="text-danger">
+        <div *ngIf="roomForm.get('roomNumber')?.errors?.['required']">Room number is required.</div>
+        <div *ngIf="roomForm.get('roomNumber')?.errors?.['roomNumberRange']">Room number must be between 101 and 500.</div>
+      </div>
+    </div>
+
+    <!-- Room Type -->
+    <div class="form-group">
+      <label for="roomType">Room Type</label>
+      <select id="roomType" formControlName="roomType" class="form-control">
+        <option value="">Select room type</option>
+        <option value="Single Bed">Single Bed</option>
+        <option value="Double Bed">Double Bed</option>
+        <option value="Family Type">Family Type</option>
+      </select>
+      <div *ngIf="roomForm.get('roomType')?.invalid && roomForm.get('roomType')?.touched" class="text-danger">
+        Room type is required.
+      </div>
+    </div>
+
+    <!-- Price -->
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input id="price" type="number" formControlName="price" class="form-control">
+      <div *ngIf="roomForm.get('price')?.invalid && roomForm.get('price')?.touched" class="text-danger">
+        <div *ngIf="roomForm.get('price')?.errors?.['required']">Price is required.</div>
+        <div *ngIf="roomForm.get('price')?.errors?.['pattern']">Price must be numeric.</div>
+        <div *ngIf="roomForm.get('price')?.errors?.['priceMin']">Price must be at least 100.</div>
+      </div>
+    </div>
+
+    <!-- Availability -->
+    <div class="form-group">
+      <label for="isAvailable">Available</label>
+      <select id="isAvailable" formControlName="isAvailable" class="form-control">
+        <option [value]="true">Yes</option>
+        <option [value]="false">No</option>
+      </select>
+      <div *ngIf="roomForm.get('isAvailable')?.invalid && roomForm.get('isAvailable')?.touched" class="text-danger">
+        Availability selection is required.
+      </div>
+    </div>
+
+    <!-- Main Image -->
+    <div class="form-group">
+      <label for="imagePath">Main Image</label>
+      <input id="imagePath" type="text" formControlName="imagePath" class="form-control">
+      <div *ngIf="roomForm.get('imagePath')?.invalid && roomForm.get('imagePath')?.touched" class="text-danger">
+        Main image URL is required.
+      </div>
+    </div>
+
+    <!-- Hall -->
+    <div class="form-group">
+      <label for="hall">Hall</label>
+      <input id="hall" type="text" formControlName="hall" class="form-control">
+    </div>
+
+    <!-- Bathroom -->
+    <div class="form-group">
+      <label for="bathRoom">Bathroom</label>
+      <input id="bathRoom" type="text" formControlName="bathRoom" class="form-control">
+    </div>
+
+    <!-- Rating -->
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input id="rating" type="number" formControlName="rating" class="form-control">
+      <div *ngIf="roomForm.get('rating')?.invalid && roomForm.get('rating')?.touched" class="text-danger">
+        <div *ngIf="roomForm.get('rating')?.errors?.['required']">Rating is required.</div>
+        <div *ngIf="roomForm.get('rating')?.errors?.['ratingRange']">Rating must be between 1.0 and 5.0.</div>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="form-group">
+      <label for="location">Location</label>
+      <select id="location" formControlName="location" class="form-control">
+        <option value="">Select location</option>
+        <option value="Tambaram">Tambaram</option>
+        <option value="Shozhlinganallur">Shozhlinganallur</option>
+        <option value="Navalur">Navalur</option>
+      </select>
+      <div *ngIf="roomForm.get('location')?.invalid && roomForm.get('location')?.touched" class="text-danger">
+        Location is required.
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input id="description" type="text" formControlName="description" class="form-control">
+      <div *ngIf="roomForm.get('description')?.invalid && roomForm.get('description')?.touched" class="text-danger">
+        <div *ngIf="roomForm.get('description')?.errors?.['required']">Description is required.</div>
+        <div *ngIf="roomForm.get('description')?.errors?.['pattern']">Description cannot contain numbers or special characters.</div>
+      </div>
+    </div>
+
+    <!-- Amenities -->
+    <div class="form-group">
+      <label for="wifi">Free Wi-Fi</label>
+      <input id="wifi" type="checkbox" formControlName="wifi">
+    </div>
+    <div class="form-group">
+      <label for="tv">TV Available</label>
+      <input id="tv" type="checkbox" formControlName="tv">
+    </div>
+    <div class="form-group">
+      <label for="carparking">Car parking Available</label>
+      <input id="carparking" type="checkbox" formControlName="carparking">
+    </div>
+    <div class="form-group">
+      <label for="hotwater">Hot Water</label>
+      <input id="hotwater" type="checkbox" formControlName="hotwater">
+    </div>
+    <div class="form-group">
+      <label for="ironing">Ironing</label>
+      <input id="ironing" type="checkbox" formControlName="ironing">
+    </div>
+    <div class="form-group">
+      <label for="freecancelation">Free Cancellation</label>
+      <input id="freecancelation" type="checkbox" formControlName="freecancelation">
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

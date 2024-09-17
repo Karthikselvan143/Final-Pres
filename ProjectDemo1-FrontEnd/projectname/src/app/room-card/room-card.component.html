@@ -1,0 +1,29 @@
+<div class="card-container">
+  <div class="room-card">
+    <!-- Image Container -->
+    <div class="image-container">
+      <img src="path-to-main-image.jpg" class="card-img" alt="Room Image">
+      <div class="small-images-container">
+        <img src="path-to-bathroom-image.jpg" class="small-img" alt="Bathroom Image">
+        <img src="path-to-hall-image.jpg" class="small-img" alt="Hall Image">
+      </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="content-container">
+      <div class="card-body">
+        <h5 class="card-title">Room {{ room?.roomNumber }}</h5>
+        <p class="card-text"><strong>Room Type:</strong> {{ room?.roomType }}</p>
+        <p class="card-text"><strong>Price:</strong> {{ room?.price | currency }}</p>
+        <p class="card-text"><strong>Location:</strong> {{ room?.location }}</p>
+        <p class="card-text"><strong>Description:</strong> {{ room?.description }}</p>
+        <p class="card-text"><strong>Rating:</strong> {{ room?.rating }} / 5</p>
+      </div>
+    </div>
+
+    <!-- Button Container -->
+    <div class="button-group">
+      <button class="btn btn-primary" (click)="onUpdate(room?.id)">Update</button>
+    </div>
+  </div>
+</div>

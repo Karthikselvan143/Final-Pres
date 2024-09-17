@@ -1,0 +1,83 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ mode === 'create' ? 'Add Staff' : 'Edit Staff' }}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<form [formGroup]="staffForm" (ngSubmit)="save()">
+  <div class="modal-body">
+  
+    <div class="form-group">
+      <label for="staffName">Name</label>
+      <input type="text" class="form-control" id="staffName" [(ngModel)]="staff.staffName" formControlName="staffName">
+      <div *ngIf="staffForm.get('staffName')?.invalid && staffForm.get('staffName')?.touched" class="text-danger">
+        <div *ngIf="staffForm.get('staffName')?.errors?.['required']">Name is required.</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="staff.email" formControlName="email">
+      <div *ngIf="staffForm.get('email')?.invalid && staffForm.get('email')?.touched" class="text-danger">
+        <div *ngIf="staffForm.get('email')?.errors?.['required']">Email is required.</div>
+        <div *ngIf="staffForm.get('email')?.errors?.['email']">Enter a valid email address.</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="contact">Contact</label>
+      <input type="text" class="form-control" id="contact" [(ngModel)]="staff.contact" formControlName="contact">
+      <div *ngIf="staffForm.get('contact')?.invalid && staffForm.get('contact')?.touched" class="text-danger">
+        <div *ngIf="staffForm.get('contact')?.errors?.['required']">Contact number is required.</div>
+        <div *ngIf="staffForm.get('contact')?.errors?.['pattern']">Enter a valid contact number (10 digits only).</div>
+        <div *ngIf="staffForm.get('contact')?.errors?.['maxlength']">Contact number cannot exceed 10 digits.</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" [(ngModel)]="staff.address" formControlName="address">
+      <div *ngIf="staffForm.get('address')?.invalid && staffForm.get('address')?.touched" class="text-danger">
+        <div *ngIf="staffForm.get('address')?.errors?.['pattern']">Address must contain only characters.</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input type="number" class="form-control" id="rating" [(ngModel)]="staff.rating" formControlName="rating" min="0" max="5">
+      <div *ngIf="staffForm.get('rating')?.invalid && staffForm.get('rating')?.touched" class="text-danger">
+        <div *ngIf="staffForm.get('rating')?.errors?.['min']">Rating must be at least 0.</div>
+        <div *ngIf="staffForm.get('rating')?.errors?.['max']">Rating cannot be more than 5.</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="isAvailable">Available</label>
+      <select class="form-control" id="isAvailable"  [(ngModel)]="staff.isAvailable" formControlName="isAvailable">
+        <option value="">Select Availability</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="aadhar">Aadhar</label>
+      <input type="text" class="form-control" id="aadhar" [(ngModel)]="staff.aadhar" formControlName="aadhar">
+      <div *ngIf="staffForm.get('aadhar')?.invalid && staffForm.get('aadhar')?.touched" class="text-danger">
+        <div *ngIf="staffForm.get('aadhar')?.errors?.['required']">Aadhar number is required.</div>
+        <div *ngIf="staffForm.get('aadhar')?.errors?.['pattern']">Aadhar number must be exactly 12 digits.</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="imagePath">Image Path</label>
+      <input type="text" class="form-control" id="imagePath" [(ngModel)]="staff.imagePath" formControlName="imagePath">
+    </div>
+    
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">Cancel</button>
+    <button type="submit" class="btn btn-primary" [disabled]="staffForm.invalid">{{ mode === 'create' ? 'Add' : 'Update' }}</button>
+  </div>
+</form>

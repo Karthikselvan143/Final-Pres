@@ -1,0 +1,143 @@
+/* Container Styling */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Logo Container Styling */
+  .logo-container {
+    margin-bottom: 2rem;
+  }
+  .error-message {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 0.25em;
+  }
+  
+  
+  .logo-icon {
+    color: #003366; /* Navy Blue */
+    transition: color 0.3s ease;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Hover Effect for Logo Icon */
+  .logo-icon:hover {
+    color: #ffd700; /* Gold */
+    transform: scale(1.1); /* Slightly larger on hover */
+  }
+  
+  /* Form Container Styling */
+  .form-container {
+    background: #ffffff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideIn 0.6s forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Label Styling */
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #003366; /* Navy Blue */
+    transition: color 0.3s ease;
+  }
+  
+  /* Input and Select Styling */
+  .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Input and Select Hover and Focus Effects */
+  .form-control:focus {
+    border-color: #0056b3; /* Dark Blue */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+    outline: none;
+  }
+  
+  /* Button Styling */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Primary Button Styling (Gold) */
+  .btn-primary {
+    background-color: #ffd700; /* Gold */
+    border: none;
+    color: #000;
+  }
+  
+  /* Primary Button Hover Effect */
+  .btn-primary:hover {
+    background-color: #e5b800; /* Darker Gold */
+    transform: scale(1.05);
+  }
+  
+  /* Secondary Button Styling */
+  .btn-secondary {
+    background-color: #6c757d; /* Gray */
+    border: none;
+    color: #fff;
+  }
+  
+  /* Secondary Button Hover Effect */
+  .btn-secondary:hover {
+    background-color: #5a6268; /* Darker Gray */
+    transform: scale(1.05);
+  }
+  
+  /* Button Group Styling */
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  /* Form Container Hover Effect */
+  .form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animation for Form Entrance */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Animation for Logo Fade In */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
